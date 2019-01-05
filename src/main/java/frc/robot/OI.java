@@ -12,31 +12,93 @@ package frc.robot;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  //// CREATING BUTTONS
-  // One type of button is a joystick button which is any button on a
-  //// joystick.
-  // You create one by telling it which joystick it's on and which button
-  // number it is.
-  // Joystick stick = new Joystick(port);
-  // Button button = new JoystickButton(stick, buttonNumber);
 
-  // There are a few additional built in buttons you can use. Additionally,
-  // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
+  public class XboxController extends GenericHID {
 
-  //// TRIGGERING COMMANDS WITH BUTTONS
-  // Once you have a button, it's trivial to bind it to a button in one of
-  // three ways:
+    public double getTriggerAxis(GenericHID.Hand kleft) {
 
-  // Start the command when the button is pressed and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
+      double axisValue = 0;
 
-  // Run the command while the button is being held down and interrupt it once
-  // the button is released.
-  // button.whileHeld(new ExampleCommand());
+      if (getTriggerAxis(kleft) >= 50) {
+        // tell robot to move forward
+      } else if (getTriggerAxis(kleft) <= -50) {
+        // Tell robot to move backwards
+      } else if (getTriggerAxis(kleft) == 0) {
+        // Tell robot not to move forward or back
+      } else {
+        // Tell robot to not move
+      }
+    }
 
-  // Start the command when the button is released and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
+    public double getTriggerAxis(GenericHID.Hand kright) {
+
+      if (getTriggerAxis(kright) >= 50) {
+        // Tell robot to move right
+      } else if (getTriggerAxis(kright) <= -50) {
+        // Tell robot to move left
+      } else if (getTriggerAxis(kright) == 0) {
+        // Tell robot not to move side to side
+      } else {
+        // Tell robot to not move
+      }
+
+    }
+
+    public boolean getXButton;
+    {
+
+      if (getXButtonPressed) {
+        if (getXButtonReleased) {
+          // Tell bot what to do when B is pressed
+        }
+      }
+    }
+    public boolean getYButton;
+    {
+
+      if (getYButtonPressed) {
+        if (getYButtonReleased) {
+          // Tell bot what to do when B is pressed
+        }
+      }
+    }
+
+    public boolean getAButton;
+    {
+
+      if (getAButtonPressed) {
+        if (getAButtonReleased) {
+          // Tell bot what to do when A is pressed
+        }
+      }
+    }
+
+    public boolean getBButton;
+    {
+
+      if (getBButtonPressed) {
+        if (getBButtonReleased) {
+          // Tell bot what to do when B is pressed
+        }
+      }
+    }
+
+    public boolean getBumper(GenericHID.Hand kleft) {
+
+      if (getBumperPressed(kleft)) {
+        if (getBumperReleased(kleft)) {
+          // Tell bot what to do when left bumper is pressed
+        }
+      }
+    }
+
+    public boolean getBumper(GenericHID.Hand kright) {
+
+      if (getBumperPressed(kright)) {
+        if (getBumperreleased(kright)) {
+          // Tell bot what to do when right bumper is pressed
+        }
+      }
+    }
+  }
 }
