@@ -57,8 +57,8 @@ public class OI {
 			return leftdrivestick;
 	}
 
-	public double rightX() {
-		double rightdrivestick = driver.getRawAxis(5); // change axis number
+	public double rightY() {
+		double rightdrivestick = driver.getRawAxis(5);
 		if (Math.abs(rightdrivestick) < 0.05)
 			return 0.0;
 		else
