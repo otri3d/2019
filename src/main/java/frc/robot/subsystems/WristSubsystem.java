@@ -23,7 +23,6 @@ public class WristSubsystem extends Subsystem {
 
   public WristSubsystem(){
     Motor = new VictorSPX(RobotMap.wristMotor);
-
   }
 
   @Override
@@ -37,4 +36,9 @@ public class WristSubsystem extends Subsystem {
 
   }
 
+  public void wristMovemnt(double power){
+    Motor.set(ControlMode.PercentOutput, power);
+  }
+
 }
+
