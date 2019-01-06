@@ -7,16 +7,12 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-// import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.ExampleCommand;
-// import frc.robot.commands.*;
-import frc.robot.subsystems.*;
+import frc.robot.subsystems.DriveSubsystem;;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,12 +22,11 @@ import frc.robot.subsystems.*;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static DriveSubsystem dt = new DriveSubsystem();
+  public static DriveSubsystem m_subsystem = new DriveSubsystem();
   public static OI m_oi;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
-  public static DriveSubsystem driveSubsystem;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -39,17 +34,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    driveSubsystem = new DriveSubsystem();
-        // OI must be constructed after subsystems. If the OI creates Commands
-        //(which it very likely will), subsystems are not guaranteed to be
-        // constructed yet. Thus, their requires() statements may grab null
-        // pointers. Bad news. Don't move it.
-        m_oi = new OI();
-        CameraServer.getInstance().startAutomaticCapture();        
-    // m_chooser.addOption("Autonomous Command: presetDriveTime", new AutonomousCommand(5));
-    // m_chooser.setDefaultOption("Autonomous Command", new AutonomousCommand(0));
-    m_chooser.addDefault("Default Auto", new ExampleCommand());
-    // chooser.addObject("My Auto", new MyAutoCommand());
+    m_oi = new OI();
+    //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
+    // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
 

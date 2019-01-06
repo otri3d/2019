@@ -8,7 +8,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -45,23 +44,23 @@ public class OI {
 
   public Joystick driver = new Joystick(0);
 
-  public OI() {
-		
+  public OI(){
+
+  }
+
+  public double leftY(){
+    double leftdrivestick = driver. getRawAxis(1);
+    if (Math.abs(leftdrivestick)<0.05)
+      return 0.0;
+    else
+      return leftdrivestick;
   }
   
-  public double leftY() {
-		double leftdrivestick = driver.getRawAxis(1);
-		if (Math.abs(leftdrivestick) < 0.05)
-			return 0.0;
-		else
-			return leftdrivestick;
-	}
-
-	public double rightY() {
-		double rightdrivestick = driver.getRawAxis(5);
-		if (Math.abs(rightdrivestick) < 0.05)
-			return 0.0;
-		else
-			return rightdrivestick;
-	}
+  public double rightY(){
+    double rightdrivestick = driver. getRawAxis(5);
+    if (Math.abs(rightdrivestick)<0.05)
+      return 0.0;
+    else
+      return rightdrivestick;
+  }
 }

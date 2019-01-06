@@ -1,66 +1,34 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in the root directory of */
+/* the project.                                                               */
+/*----------------------------------------------------------------------------*/
+
 package frc.robot.subsystems;
 
-// import edu.wpi.first.wpilibj.command.Subsystem;
-// package org.usfirst.frc420.MyRobot.subsystems;
-
-import com.ctre.phoenix.*;
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-
-import frc.robot.RobotMap;
-// import org.usfirst.frc420.MyRobot.commands.*;
-import frc.robot.commands.TankDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.AnalogAccelerometer;
-import edu.wpi.first.wpilibj.AnalogGyro;
-import edu.wpi.first.wpilibj.PowerDistributionPanel;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;,
 
+/**
+ * An example subsystem.  You can replace me with your own Subsystem.
+ */
 public class DriveSubsystem extends Subsystem {
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
+  private VictorSPX leftfrontMotor; 
+  private VictorSPX leftbackMotor;
+  private VictorSPX rightfrontMotor;
+  private VictorSPX rightbackMotor;
 
-  private VictorSPX leftFrontMotor;
-  private VictorSPX leftBackMotor;
-  private VictorSPX rightFrontMotor;
-  private VictorSPX rightBackMotor;
-
-  public DriveSubsystem() {
+  public DriveSubsystem(){
     
-      leftFrontMotor = new VictorSPX(RobotMap.srx_left1);
-      leftFrontMotor.setInverted(false);
-      
-      leftBackMotor = new VictorSPX(RobotMap.srx_left2);
-      leftBackMotor.setInverted(false);
-
-      rightFrontMotor = new VictorSPX(RobotMap.srx_right3);
-      rightFrontMotor.setInverted(false);
-
-      rightBackMotor = new VictorSPX(RobotMap.srx_right4);
-      rightBackMotor.setInverted(false);      
-      
   }
 
   @Override
   public void initDefaultCommand() {
-      setDefaultCommand(new TankDrive());
-  }
-
-  @Override
-  public void periodic() {
-      // Put code here to be run every loop
-
-  }
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-  public void leftGearbox(double power)
-  {
-      leftFrontMotor.set(ControlMode.PercentOutput,power);
-      leftBackMotor.set(ControlMode.PercentOutput,power);
-  }
-  public void rightGearbox(double power)
-  { 
-    rightFrontMotor.set(ControlMode.PercentOutput,power);
-    rightBackMotor.set(ControlMode.PercentOutput,power);
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
   }
 }
-
-
