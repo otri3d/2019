@@ -24,6 +24,12 @@ public class DriveSubsystem extends Subsystem {
   private VictorSPX leftbackMotor;
   private VictorSPX rightfrontMotor;
   private VictorSPX rightbackMotor;
+  
+  // Put in your motors (Victor, Spark, whatnot)
+  // private Spark leftfrontMotor; 
+  // private Spark leftbackMotor;
+  // private Spark rightfrontMotor;
+  // private Spark rightbackMotor;
 
   public DriveSubsystem(){
     leftfrontMotor = new VictorSPX(RobotMap.leftfront);

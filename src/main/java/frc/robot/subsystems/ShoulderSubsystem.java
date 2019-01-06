@@ -22,6 +22,10 @@ public class ShoulderSubsystem extends Subsystem {
   private VictorSPX FrontMotor; 
   private VictorSPX BackMotor;
 
+  // Put in your motors (Victor, Spark, whatnot)
+  // private Spark FrontMotor; 
+  // private Spark BackMotor;
+  
   public ShoulderSubsystem(){
     FrontMotor = new VictorSPX(RobotMap.shoulderFront);
     BackMotor = new VictorSPX(RobotMap.shoulderBack);

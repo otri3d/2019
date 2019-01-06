@@ -21,6 +21,9 @@ public class WristSubsystem extends Subsystem {
   // here. Call these from Commands.
   private VictorSPX Motor;
 
+  // Put in your motors (Victor, Spark, whatnot)
+  // private Spark Motor; 
+
   public WristSubsystem(){
     Motor = new VictorSPX(RobotMap.wristMotor);
   }
