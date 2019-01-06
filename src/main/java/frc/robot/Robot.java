@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -44,6 +45,7 @@ public class Robot extends TimedRobot {
         // constructed yet. Thus, their requires() statements may grab null
         // pointers. Bad news. Don't move it.
         m_oi = new OI();
+        CameraServer.getInstance().startAutomaticCapture();        
     // m_chooser.addOption("Autonomous Command: presetDriveTime", new AutonomousCommand(5));
     // m_chooser.setDefaultOption("Autonomous Command", new AutonomousCommand(0));
     m_chooser.addDefault("Default Auto", new ExampleCommand());
