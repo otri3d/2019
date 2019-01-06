@@ -39,4 +39,12 @@ public class ShoulderSubsystem extends Subsystem {
 
   }
 
+  public void shoulderForwardGearBox(double power){
+    FrontMotor.set(ControlMode.PercentOutput, power);
+  }
+
+  public void shoulderBackGearBox(double power){
+    BackMotor.set(ControlMode.PercentOutput, power);
+  }
+
 }
