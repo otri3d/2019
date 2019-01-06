@@ -29,4 +29,7 @@ public class RobotMap {
   public static int rightfront =3;
   public static int rightback =4;
 
+  public static int shoulderFront = 5;
+  public static int shoulderBack = 6;
+
 }
