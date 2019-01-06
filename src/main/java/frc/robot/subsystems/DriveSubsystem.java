@@ -8,8 +8,11 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;,
+import frc.robot.RobotMap;
+import frc.robot.commands.TankDrive;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
@@ -23,12 +26,31 @@ public class DriveSubsystem extends Subsystem {
   private VictorSPX rightbackMotor;
 
   public DriveSubsystem(){
-    
+    leftfrontMotor = new VictorSPX(RobotMap.leftfront);
+    leftbackMotor = new VictorSPX(RobotMap.leftback);
+    rightfrontMotor = new VictorSPX(RobotMap.rightfront);
+    rightbackMotor = new VictorSPX(RobotMap.rightback);
+
   }
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new TankDrive());
+  }
+
+  @Override
+  public void periodic(){
+
+  }
+
+  public void leftGearBox(double power){
+    leftbackMotor.set(ControlMode.PercentOutput, power);
+    leftfrontMotor.set(ControlMode.PercentOutput, power);
+  }
+  public void rigthGearBox(double power){
+    rightbackMotor.set(ControlMode.PercentOutput, power);
+    rightfrontMotor.set(ControlMode.PercentOutput, power);
   }
 }

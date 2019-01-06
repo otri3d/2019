@@ -22,7 +22,7 @@ import frc.robot.subsystems.DriveSubsystem;;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static DriveSubsystem m_subsystem = new DriveSubsystem();
+  public static DriveSubsystem dt = new DriveSubsystem();
   public static OI m_oi;
 
   Command m_autonomousCommand;

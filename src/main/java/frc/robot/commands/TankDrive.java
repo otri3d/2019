@@ -16,7 +16,7 @@ import frc.robot.Robot;
 public class TankDrive extends Command {
   public TankDrive() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_subsystem);
+    requires(Robot.dt);
   }
 
   // Called just before this Command runs the first time
