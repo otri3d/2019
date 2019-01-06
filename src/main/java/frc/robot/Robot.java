@@ -13,7 +13,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.ShoulderSubsystem;;
+import frc.robot.subsystems.ShoulderSubsystem;
+import frc.robot.subsystems.WristSubsystem;;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +26,7 @@ import frc.robot.subsystems.ShoulderSubsystem;;
 public class Robot extends TimedRobot {
   public static DriveSubsystem dt = new DriveSubsystem();
   public static ShoulderSubsystem shoulder = new ShoulderSubsystem();
+  public static WristSubsystem wrist = new WristSubsystem();
   public static OI m_oi;
 
   Command m_autonomousCommand;

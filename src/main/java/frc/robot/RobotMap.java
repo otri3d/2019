@@ -32,4 +32,6 @@ public class RobotMap {
   public static int shoulderFront = 5;
   public static int shoulderBack = 6;
 
+  public static int wristMotor = 7;
+
 }
