@@ -11,10 +11,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 /**
- * An example command.  You can replace me with your own command.
+ * An example command. You can replace me with your own command.
  */
 public class WristUp extends Command {
-
 
   public WristUp() {
     // Use requires() here to declare subsystem dependencies
@@ -35,10 +34,9 @@ public class WristUp extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (Robot.m_oi.driver.getRawButtonReleased(3)){
+    if (Robot.m_oi.driver.getRawButtonReleased(3)) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
@@ -53,5 +51,6 @@ public class WristUp extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.wrist.wristMovement(0); // Stop the wrist motor when interrupted
   }
 }
