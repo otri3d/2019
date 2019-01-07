@@ -65,6 +65,7 @@ public class OI {
   private Button allignUsingVision = new JoystickButton(driver, 7); // 3 if we wanted to use (X)... if alternative used
                                                                     // above can use button 7 (back) or 8 (start) for
                                                                     // vision (if wanted)
+  //Code won't compile if buttons #s are on RobotMap. Something Xbox something RoboRIO ports
 
   public OI() {
     this.shoulderUp.whileHeld(new ShoulderUp());
