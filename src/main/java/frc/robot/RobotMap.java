@@ -34,4 +34,12 @@ public class RobotMap {
 
   public static int wristMotor = 7;
 
+  public static int intake = 8;
+
+  // limit switches  
+  public static int shoulderlimitmax = 0;
+  public static int shoulderlimitmin = 1;
+  public static int wristmax = 2;
+  public static int wristmin = 3;
+
 }

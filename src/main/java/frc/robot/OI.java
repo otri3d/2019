@@ -8,6 +8,14 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.ShoulderDown;
+import frc.robot.commands.ShoulderUp;
+import frc.robot.commands.WristDown;
+import frc.robot.commands.WristUp;
+import frc.robot.commands.intake;
+import frc.robot.commands.outtake;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -44,7 +52,21 @@ public class OI {
 
   public Joystick driver = new Joystick(0);
 
+  private Button shoulderUp = new JoystickButton(driver, 1);
+  private Button shoulderDown = new JoystickButton(driver, 2);
+  private Button wristUp = new JoystickButton(driver, 3);
+  private Button wristDown = new JoystickButton(driver, 4);
+  private Button intake = new JoystickButton(driver, 5);
+  private Button outtake = new JoystickButton(driver, 6);
+  private Button allignUsingVision = new JoystickButton(driver, 7);
+
   public OI(){
+    this.shoulderUp.whileHeld(new ShoulderUp());
+    this.shoulderDown.whileHeld(new ShoulderDown());
+    this.wristUp.whileHeld(new WristUp());
+    this.wristDown.whileHeld(new WristDown());
+    this.intake.whileHeld(new intake());
+    this.outtake.whileHeld(new outtake());
 
   }
 
@@ -62,5 +84,13 @@ public class OI {
       return 0.0;
     else
       return rightdrivestick;
+  }
+
+  public double rightX(){
+    double joy = driver.getRawAxis(4);
+    if (Math.abs(joy)< 0.05)
+      return 0;
+    else
+      return
   }
 }
