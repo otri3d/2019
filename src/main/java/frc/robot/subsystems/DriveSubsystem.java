@@ -16,23 +16,23 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 /**
- * An example subsystem.  You can replace me with your own Subsystem.
+ * An example subsystem. You can replace me with your own Subsystem.
  */
 public class DriveSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  private VictorSPX leftfrontMotor; 
+  private VictorSPX leftfrontMotor;
   private VictorSPX leftbackMotor;
   private VictorSPX rightfrontMotor;
   private VictorSPX rightbackMotor;
-  
+
   // Put in your motors (Victor, Spark, whatnot)
-  // private Spark leftfrontMotor; 
+  // private Spark leftfrontMotor;
   // private Spark leftbackMotor;
   // private Spark rightfrontMotor;
   // private Spark rightbackMotor;
 
-  public DriveSubsystem(){
+  public DriveSubsystem() {
     leftfrontMotor = new VictorSPX(RobotMap.leftfront);
     leftbackMotor = new VictorSPX(RobotMap.leftback);
     rightfrontMotor = new VictorSPX(RobotMap.rightfront);
@@ -46,20 +46,21 @@ public class DriveSubsystem extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
 
     setDefaultCommand(new ArcadeDrive());
-    //uncomment for tankdrive
-   // setDefaultCommand(new TankDrive());
+    // uncomment for tankdrive
+    // setDefaultCommand(new TankDrive());
   }
 
   @Override
-  public void periodic(){
+  public void periodic() {
 
   }
 
-  public void leftGearBox(double power){
+  public void leftGearBox(double power) {
     leftbackMotor.set(ControlMode.PercentOutput, power);
     leftfrontMotor.set(ControlMode.PercentOutput, power);
   }
-  public void rigthGearBox(double power){
+
+  public void rightGearBox(double power) {
     rightbackMotor.set(ControlMode.PercentOutput, power);
     rightfrontMotor.set(ControlMode.PercentOutput, power);
   }
