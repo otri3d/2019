@@ -51,8 +51,8 @@ double inputX = 0;
       inputY -= RAMP_DOWN_CONSTANT;
     }
 
-    if (deltaY >= DELTA_LIMIT){
-      inputY += RAMP_UP_CONSTANT;
+    if (deltaX >= DELTA_LIMIT){
+      inputX += RAMP_UP_CONSTANT;
     }
     else if (deltaX<= -DELTA_LIMIT){
       inputX -= RAMP_DOWN_CONSTANT;
