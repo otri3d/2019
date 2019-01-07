@@ -33,8 +33,8 @@ public class intake extends Command {
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
-  protected boolean isFinished(5) {
-    if (Robot.m_oi.driver.getRawButtonReleased(4)){
+  protected boolean isFinished() {
+    if (Robot.m_oi.driver.getRawButtonReleased(5)){
       return true;
     }
     else{
