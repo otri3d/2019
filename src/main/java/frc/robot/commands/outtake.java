@@ -11,10 +11,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 /**
- * An example command.  You can replace me with your own command.
+ * An example command. You can replace me with your own command.
  */
 public class outtake extends Command {
-
 
   public outtake() {
     // Use requires() here to declare subsystem dependencies
@@ -35,10 +34,9 @@ public class outtake extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (Robot.m_oi.driver.getRawButtonReleased(6)){
+    if (Robot.m_oi.driver.getRawButtonReleased(6)) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
@@ -46,12 +44,13 @@ public class outtake extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.intake.intakespeed(0);  // Stop the outtake once the button is not pressed
+    Robot.intake.intakespeed(0); // Stop the outtake once the button is not pressed
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.intake.intakespeed(0); // Stop the outtake once the button is not pressed
   }
 }
