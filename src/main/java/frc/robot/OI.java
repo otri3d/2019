@@ -52,15 +52,21 @@ public class OI {
 
   public Joystick driver = new Joystick(0);
 
-  private Button shoulderUp = new JoystickButton(driver, 1);
-  private Button shoulderDown = new JoystickButton(driver, 2);
-  private Button wristUp = new JoystickButton(driver, 3);
-  private Button wristDown = new JoystickButton(driver, 4);
-  private Button intake = new JoystickButton(driver, 5);
-  private Button outtake = new JoystickButton(driver, 6);
-  private Button allignUsingVision = new JoystickButton(driver, 7);
+  private Button shoulderUp = new JoystickButton(driver, 1); // 5 (left bumper)
+  private Button shoulderDown = new JoystickButton(driver, 2); // 6 (right bumper)
+  private Button wristUp = new JoystickButton(driver, 3); // 4 (Y)
+  private Button wristDown = new JoystickButton(driver, 4); // 1 (A)
+  private Button intake = new JoystickButton(driver, 5); // axis 3 (0 to 1)(left trigger)... alternatively we can use x
+                                                         // and b in which
+                                                         // case this would be 3 (X)
+  private Button outtake = new JoystickButton(driver, 6); // axis 3 (0 to -1)(right trigger)... alternatively we can use
+                                                          // x and b in
+                                                          // which case this would be 2 (B)
+  private Button allignUsingVision = new JoystickButton(driver, 7); // 3 if we wanted to use (X)... if alternative used
+                                                                    // above can use button 7 (back) or 8 (start) for
+                                                                    // vision (if wanted)
 
-  public OI(){
+  public OI() {
     this.shoulderUp.whileHeld(new ShoulderUp());
     this.shoulderDown.whileHeld(new ShoulderDown());
     this.wristUp.whileHeld(new WristUp());
@@ -70,25 +76,25 @@ public class OI {
 
   }
 
-  public double leftY(){
-    double leftdrivestick = driver. getRawAxis(1);
-    if (Math.abs(leftdrivestick)<0.05)
+  public double leftY() {
+    double leftdrivestick = driver.getRawAxis(1);
+    if (Math.abs(leftdrivestick) < 0.05)
       return 0.0;
     else
       return leftdrivestick;
   }
-  
-  public double rightY(){
-    double rightdrivestick = driver. getRawAxis(5);
-    if (Math.abs(rightdrivestick)<0.05)
+
+  public double rightY() {
+    double rightdrivestick = driver.getRawAxis(5);
+    if (Math.abs(rightdrivestick) < 0.05)
       return 0.0;
     else
       return rightdrivestick;
   }
 
-  public double rightX(){
+  public double rightX() {
     double joy = driver.getRawAxis(4);
-    if (Math.abs(joy)< 0.05)
+    if (Math.abs(joy) < 0.05)
       return 0;
     else
       return joy;
