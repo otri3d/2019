@@ -36,6 +36,7 @@ public class RobotMap {
 
   public static int intake = 8;
 
+<<<<<<< HEAD
   // Buttons
 
   public static int shoulderUpButton = 1;// 5 (left bumper)
@@ -53,6 +54,17 @@ public class RobotMap {
                                                 // vision (if wanted)
 
   // limit switches
+=======
+  // Buttons  
+  public static int intakeButton = 5;
+  public static int outtakeButton = 6;
+  public static int shoulderDownButton = 2;
+  public static int shoulderUpButton = 1;
+  public static int wristDownButton = 4;
+  public static int wristUpButton = 3;
+
+  // limit switches  
+>>>>>>> parent of f228781... "writst"
   public static int shoulderlimitmax = 0;
   public static int shoulderlimitmin = 1;
   public static int wristmax = 2;

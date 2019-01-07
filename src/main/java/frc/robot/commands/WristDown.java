@@ -36,7 +36,7 @@ public class WristDown extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (Robot.m_oi.driver.getRawButtonReleased(RobotMap.wristDownButton)){
+    if (Robot.m_oi.driver.getRawButtonReleased(RobotMap.writstDownButton)){
       return true;
     }
     else{
