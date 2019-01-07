@@ -53,12 +53,12 @@ public class OI {
   public Joystick driver = new Joystick(0);
 
   // The "Buttons" are the corresponding integers in the RobotMap class
-  private Button shoulderUp = new JoystickButton(driver, shoulderUpButton);
-  private Button shoulderDown = new JoystickButton(driver, shoulderDownButton);
-  private Button wristUp = new JoystickButton(driver, wristUpButton);
-  private Button wristDown = new JoystickButton(driver, wristDownButton);
-  private Button intake = new JoystickButton(driver, intakeButton);
-  private Button outtake = new JoystickButton(driver, outtakeButton);
+  private Button shoulderUp = new JoystickButton(driver, RobotMap.shoulderUpButton);
+  private Button shoulderDown = new JoystickButton(driver, RobotMap.shoulderDownButton);
+  private Button wristUp = new JoystickButton(driver, RobotMap.wristUpButton);
+  private Button wristDown = new JoystickButton(driver, RobotMap.wristDownButton);
+  private Button intake = new JoystickButton(driver, RobotMap.intakeButton);
+  private Button outtake = new JoystickButton(driver, RobotMap.outtakeButton);
   private Button allignUsingVision = new JoystickButton(driver, 7);
 
   public OI(){
