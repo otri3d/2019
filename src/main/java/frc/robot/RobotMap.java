@@ -36,6 +36,14 @@ public class RobotMap {
 
   public static int intake = 8;
 
+  // Buttons  
+  public static int intakeButton = 5;
+  public static int outtakeButton = 6;
+  public static int shoulderDownButton = 2;
+  public static int shoulderUpButton = 1;
+  public static int writstDownButton = 4;
+  public static int writstUpButton = 3;
+
   // limit switches  
   public static int shoulderlimitmax = 0;
   public static int shoulderlimitmin = 1;
