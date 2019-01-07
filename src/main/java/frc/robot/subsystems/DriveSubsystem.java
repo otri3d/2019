@@ -60,7 +60,7 @@ public class DriveSubsystem extends Subsystem {
     leftfrontMotor.set(ControlMode.PercentOutput, power);
   }
 
-  public void rightGearBox(double power) {
+  public void rigthGearBox(double power) {
     rightbackMotor.set(ControlMode.PercentOutput, power);
     rightfrontMotor.set(ControlMode.PercentOutput, power);
   }
