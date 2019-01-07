@@ -59,7 +59,7 @@ public class OI {
   private Button wristDown = new JoystickButton(driver, RobotMap.wristDownButton);
   private Button intake = new JoystickButton(driver, RobotMap.intakeButton);
   private Button outtake = new JoystickButton(driver, RobotMap.outtakeButton);
-  private Button allignUsingVision = new JoystickButton(driver, 7);
+  private Button allignUsingVision = new JoystickButton(driver, RobotMap.allignUsingVisionButton);
 
   public OI(){
     this.shoulderUp.whileHeld(new ShoulderUp());

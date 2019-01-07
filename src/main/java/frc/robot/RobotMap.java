@@ -43,6 +43,7 @@ public class RobotMap {
   public static int shoulderUpButton = 1;
   public static int wristDownButton = 4;
   public static int wristUpButton = 3;
+  public static int allignUsingVisionButton = 7;
 
   // limit switches  
   public static int shoulderlimitmax = 0;
