@@ -24,10 +24,10 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-  public static int leftfront =1;
-  public static int leftback =2;
-  public static int rightfront =3;
-  public static int rightback =4;
+  public static int leftfront = 1;
+  public static int leftback = 2;
+  public static int rightfront = 3;
+  public static int rightback = 4;
 
   public static int shoulderFront = 5;
   public static int shoulderBack = 6;
@@ -36,16 +36,23 @@ public class RobotMap {
 
   public static int intake = 8;
 
-  // Buttons  
-  public static int intakeButton = 5;
-  public static int outtakeButton = 6;
-  public static int shoulderDownButton = 2;
-  public static int shoulderUpButton = 1;
-  public static int wristDownButton = 4;
-  public static int wristUpButton = 3;
-  public static int allignUsingVisionButton = 7;
+  // Buttons
 
-  // limit switches  
+  public static int shoulderUpButton = 1;// 5 (left bumper)
+  public static int shoulderDownButton = 2;// 6 (right bumper)
+  public static int wristUpButton = 3;// 4 (Y)
+  public static int wristDownButton = 4;// 1 (A)
+  public static int intakeButton = 5;// axis 3 (0 to 1)(left trigger)... alternatively we can use x
+                                     // and b in which
+                                     // case this would be 3 (X)
+  public static int outtakeButton = 6;// axis 3 (0 to -1)(right trigger)... alternatively we can use
+                                      // x and b in
+                                      // which case this would be 2 (B)
+  public static int allignUsingVisionButton = 7;// 3 if we wanted to use (X)... if alternative used
+                                                // above can use button 7 (back) or 8 (start) for
+                                                // vision (if wanted)
+
+  // limit switches
   public static int shoulderlimitmax = 0;
   public static int shoulderlimitmin = 1;
   public static int wristmax = 2;
