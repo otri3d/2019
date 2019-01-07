@@ -9,7 +9,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
 /**
  * An example command.  You can replace me with your own command.
@@ -36,7 +35,7 @@ public class outtake extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (Robot.m_oi.driver.getRawButtonReleased(RobotMap.outtakeButton)){
+    if (Robot.m_oi.driver.getRawButtonReleased(6)){
       return true;
     }
     else{

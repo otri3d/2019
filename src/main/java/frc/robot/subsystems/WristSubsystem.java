@@ -39,7 +39,7 @@ public class WristSubsystem extends Subsystem {
 
   }
 
-  public void wristMovemnt(double power){
+  public void wristMovement(double power){
     Motor.set(ControlMode.PercentOutput, power);
   }
 
