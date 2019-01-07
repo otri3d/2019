@@ -47,6 +47,7 @@ public class outtake extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.intake.intakespeed(0);  // Stop the outtake once the button is not pressed
   }
 
   // Called when another command which requires one or more of the same

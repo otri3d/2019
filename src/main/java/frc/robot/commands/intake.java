@@ -30,6 +30,9 @@ public class intake extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+
+    //Run the motor at 5% power (update this when the wrist is built)
+    Robot.intake.intakespeed(0.05);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -46,8 +49,9 @@ public class intake extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.intake.intakespeed(0); // Stop the intake once the button is not pressed
   }
-
+ 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
