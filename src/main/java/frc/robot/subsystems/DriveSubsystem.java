@@ -45,9 +45,9 @@ public class DriveSubsystem extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
 
-    setDefaultCommand(new ArcadeDrive());
+    //setDefaultCommand(new ArcadeDrive());
     // uncomment for tankdrive
-    // setDefaultCommand(new TankDrive());
+     setDefaultCommand(new TankDrive());
   }
 
   @Override

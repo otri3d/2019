@@ -52,20 +52,13 @@ public class OI {
 
   public Joystick driver = new Joystick(0);
 
-  private Button shoulderUp = new JoystickButton(driver, 1); // 5 (left bumper)
-  private Button shoulderDown = new JoystickButton(driver, 2); // 6 (right bumper)
-  private Button wristUp = new JoystickButton(driver, 3); // 4 (Y)
-  private Button wristDown = new JoystickButton(driver, 4); // 1 (A)
-  private Button intake = new JoystickButton(driver, 5); // axis 3 (0 to 1)(left trigger)... alternatively we can use x
-                                                         // and b in which
-                                                         // case this would be 3 (X)
-  private Button outtake = new JoystickButton(driver, 6); // axis 3 (0 to -1)(right trigger)... alternatively we can use
-                                                          // x and b in
-                                                          // which case this would be 2 (B)
+  private Button shoulderUp = new JoystickButton(driver, 5); // 5 (left bumper)
+  private Button shoulderDown = new JoystickButton(driver, 6); // 6 (right bumper)
+  private Button wristUp = new JoystickButton(driver, 4); // 4 (Y)
+  private Button wristDown = new JoystickButton(driver, 1); // 1 (A)
+  private Button intake = new JoystickButton(driver, 3); // axis 3 (0 to 1)(left trigger)... alternatively we can use x
+  private Button outtake = new JoystickButton(driver, 2); // axis 3 (0 to -1)(right trigger)... alternatively we can use
   private Button allignUsingVision = new JoystickButton(driver, 7); // 3 if we wanted to use (X)... if alternative used
-                                                                    // above can use button 7 (back) or 8 (start) for
-                                                                    // vision (if wanted)
-  //Code won't compile if buttons #s are on RobotMap. Something Xbox something RoboRIO ports
 
   public OI() {
     this.shoulderUp.whileHeld(new ShoulderUp());

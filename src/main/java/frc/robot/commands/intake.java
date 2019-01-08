@@ -31,7 +31,7 @@ public class intake extends Command {
   protected void execute() {
 
     //Run the motor at 5% power (update this when the wrist is built)
-    Robot.intake.intakespeed(0.05);
+    Robot.intake.intakespeed(1.00);
   }
 
   // Make this return true when this Command no longer needs to run execute()

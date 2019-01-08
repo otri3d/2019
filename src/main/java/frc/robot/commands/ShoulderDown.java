@@ -29,7 +29,7 @@ public class ShoulderDown extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.shoulder.shoulderGearBox(-0.1);
+    Robot.shoulder.shoulderGearBox(-0.4);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -53,6 +53,6 @@ public class ShoulderDown extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.shoulder.shoulderGearBox(0); // Stop the shoulder once the command is interrupted
+    Robot.shoulder.shoulderGearBox(0.1); // Stop the shoulder once the command is interrupted
   }
 }

@@ -3,4 +3,3 @@
 
 Java code for UOIT [Robot in 3 Days](https://www.uoitri3d.ca)
 
-Vision Processing not fully incorporated since [NetworkTables](https://wpilib.screenstepslive.com/s/currentCS/m/75361/l/843361-what-is-networktables) deprecated
