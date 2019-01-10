@@ -37,10 +37,14 @@ public class RobotMap {
 
   public static int intake = 8;
 
-  // limit switches  -- DIO PORTS
-  public static int shoulderlimitmax = 0;
-  public static int shoulderlimitmin = 1;
-  public static int wristmax = 2;
-  public static int wristmin = 3;
+  // encoders (plugged into DIO ports on RoboRIO)
+  public static int LeftDrivetrain_A = 0;
+  public static int LeftDrivetrain_B = 1;
+  public static int RightDriveTrain_A = 2;
+  public static int RightDriveTrain_B = 3;
+  public static int ArmGearBox_A = 4;
+  public static int ArmGearBox_B = 5;
+  public static int wrist_A = 6;
+  public static int wrist_B = 7;
 
 }
