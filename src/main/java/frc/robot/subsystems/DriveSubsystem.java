@@ -41,7 +41,7 @@ public class DriveSubsystem extends Subsystem {
   // initialize final P,I,D,F, and tolerance constants.
   private static final double kP = 0.03;
   private static final double kI = 0.01;
-  private static final double kD = 0.00;
+  private static final double kD = 0.08;
   private static final double kF = 0.00;
 
   private static final double kToleranceDegrees = 2.0f;
@@ -54,10 +54,10 @@ public class DriveSubsystem extends Subsystem {
   private Encoder rightDrivEncoder;
 
   //Drivetrain encoder constants
-  public static final int drivewheelRadius = 4;
-  public static final int PulsePerRotation = 128;
-  public static final double gearRatio = 5.85/1;
-  public static final double EncoderPulsePerRot = PulsePerRotation*gearRatio;
+  private static final int drivewheelRadius = 4;
+  private static final int PulsePerRotation = 128;
+  private static final double gearRatio = 5.85/1;
+  private static final double EncoderPulsePerRot = PulsePerRotation*gearRatio;
 
 
   public DriveSubsystem() {
@@ -179,7 +179,7 @@ public class DriveSubsystem extends Subsystem {
 
   // encoder methods
   public double getAverageDistance(){
-    return (leftDriveEncoder.getDistance() + rightDrivEncoder.getDistance())/2;
+    return drivewheelRadius*(leftDriveEncoder.getDistance() + rightDrivEncoder.getDistance())/2;
   }
   public void resetEncoders(){
     leftDriveEncoder.reset();

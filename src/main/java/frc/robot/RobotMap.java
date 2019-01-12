@@ -25,16 +25,21 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   // CAN BUS motor IDS
+
+  // Drivetrain Motors
   public static int leftfront = 1;
   public static int leftback = 2;
   public static int rightfront = 3;
   public static int rightback = 4;
 
+  //Stage 1 Arm (Shoulder) Motors
   public static int shoulderFront = 5;
   public static int shoulderBack = 6;
 
+  // Stage 2 Arm (Wrist) Motors
   public static int wristMotor = 7;
 
+  //Stage 3 Arm (Intake) motors
   public static int intake = 8;
 
   // encoders (plugged into DIO ports on RoboRIO)
