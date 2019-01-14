@@ -35,8 +35,8 @@ public class DriveSubsystem extends Subsystem {
 
   // Identify all PID controllers used in the subsystem
   // Drivetrain has gyroPID and drivePID PID controllers
-  public frc.robot.PIDController gyroPID;
-  public frc.robot.PIDController drivePID;
+  private frc.robot.PIDController gyroPID;
+  private frc.robot.PIDController drivePID;
 
   // initialize final P,I,D,F, and tolerance constants.
   private static final double kP = 0.03;
@@ -146,8 +146,8 @@ public class DriveSubsystem extends Subsystem {
     leftGearBox((output + Pitch()*kP)*const_multiplier);
   }
 
-  public void turnToAngle(double setPoint, double const_multiplier ){
-    double output = gyroPID.calcPID(setPoint, Pitch(), 1.5);
+  public void turnToAngle(double setPoint, double currentValue, double const_multiplier ){
+    double output = gyroPID.calcPID(setPoint, currentValue, 1.5);
 
     leftGearBox(-output*const_multiplier);
     rigthGearBox(output*const_multiplier);

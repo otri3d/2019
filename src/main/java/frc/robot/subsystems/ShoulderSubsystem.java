@@ -7,8 +7,12 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.PIDController;
 import frc.robot.RobotMap;
+import sun.util.resources.cldr.ext.CurrencyNames_mas;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
@@ -22,6 +26,22 @@ public class ShoulderSubsystem extends Subsystem {
   private VictorSPX FrontMotor; 
   private VictorSPX BackMotor;
 
+  private PIDController upPID;
+  private PIDController downPID;
+  private Encoder shoulderEncoder;
+
+  private static final double up_kP = 0.02;
+  private static final double up_kI = 0.00;
+  private static final double up_kD = 0.08;
+
+  private static final double down_kP = 0.01;
+  private static final double down_kI = 0.00;
+  private static final double down_kD = 0.00;
+
+  private static final int PulsePerRotation = 128;
+  private static final double gearRatio = 198.68/1;
+  private static final double EncoderPulsePerRot = PulsePerRotation*gearRatio;
+
   // Put in your motors (Victor, Spark, whatnot)
   // private Spark FrontMotor; 
   // private Spark BackMotor;
@@ -30,6 +50,11 @@ public class ShoulderSubsystem extends Subsystem {
     FrontMotor = new VictorSPX(RobotMap.shoulderFront);
     BackMotor = new VictorSPX(RobotMap.shoulderBack);
 
+    shoulderEncoder = new Encoder(RobotMap.ArmGearBox_A, RobotMap.ArmGearBox_B, false, EncodingType.k4X);
+    shoulderEncoder.setDistancePerPulse(EncoderPulsePerRot);
+
+    upPID = new PIDController(up_kP, up_kI, up_kD);
+    downPID = new PIDController(down_kP, down_kI, down_kD);
   }
 
   @Override
@@ -46,6 +71,20 @@ public class ShoulderSubsystem extends Subsystem {
   public void shoulderGearBox(double power){
     FrontMotor.set(ControlMode.PercentOutput, power);
     BackMotor.set(ControlMode.PercentOutput, power);
+  }
+
+  public void rotateUpToSetpoint(double setPoint, double currentValue, double const_multiplier, double tolerance){
+    double output = upPID.calcPID(setPoint, currentValue, tolerance);
+
+    shoulderGearBox(output);
+  }
+
+  public double encoderDistance(){
+    return shoulderEncoder.getDistance();
+  }
+
+  public void resetEncoder(){
+    shoulderEncoder.reset();
   }
 
 }

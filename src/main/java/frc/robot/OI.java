@@ -56,9 +56,9 @@ public class OI {
   private Button shoulderDown = new JoystickButton(driver, 6); // 6 (right bumper)
   private Button wristUp = new JoystickButton(driver, 4); // 4 (Y)
   private Button wristDown = new JoystickButton(driver, 1); // 1 (A)
-  private Button intake = new JoystickButton(driver, 3); // axis 3 (0 to 1)(left trigger)... alternatively we can use x
-  private Button outtake = new JoystickButton(driver, 2); // axis 3 (0 to -1)(right trigger)... alternatively we can use
-  private Button allignUsingVision = new JoystickButton(driver, 7); // 3 if we wanted to use (X)... if alternative used
+  private Button intake = new JoystickButton(driver, 3); // x
+  private Button outtake = new JoystickButton(driver, 2); // b
+  private Button allignUsingVision = new JoystickButton(driver, 7);
 
   public OI() {
     this.shoulderUp.whileHeld(new ShoulderUp());
